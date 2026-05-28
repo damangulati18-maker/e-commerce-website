@@ -1,0 +1,14 @@
+export const regularurl="http://localhost:5001/getregularT-shirts";
+export const oversizeurl="http://localhost:5001/getoversizedtshirts";
+export const shirtsurl="http://localhost:5001/getshirts";
+export const shortsurl="http://localhost:5001/getshorts";
+export const denimsurl="http://localhost:5001/getdenims";
+export const joggersurl="http://localhost:5001/getjoggers";
+export const signupurl="http://localhost:5001/signup";
+export const loginurl="http://localhost:5001/login";
+export const logouturl="http://localhost:5001/logout";
+export const additemurl="http://localhost:5001/addtocart";
+export const getcarturl="http://localhost:5001/getcartdata";
+export const clearcarturl="http://localhost:5001/clearcart";
+export const removeitemurl="http://localhost:5001/removeitemfromcart";
+export const getloginuserurl="http://localhost:5001/logindetails";

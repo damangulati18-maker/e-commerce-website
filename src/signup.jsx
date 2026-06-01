@@ -1,27 +1,52 @@
-import bg from "./images/signupbg.PNG"
-import logo from "./images/app logo.png"
+import bg from "./images/signupbg.PNG";
+import logo from "./images/app logo.png";
 import twitter from "./images/twitter logo.png";
 import facebook from "./images/facebook logo.png";
-import instagram from "./images/instagram logo.png"
+import instagram from "./images/instagram logo.png";
 
 import { Link,useNavigate} from "react-router";
 import axios from "axios";
-import { useState } from "react";
+import { useState,useEffect,useRef } from "react";
 
-import { signupurl,loginurl } from './utils/constants';
+import { signupurl,loginurl,verifyotpurl } from './utils/constants';
 
 const SignUp = ()=>{
+
+    const otpDigits=5;
 
     const [open,setopen] = useState(false);
     const [mode, setMode] = useState("signup");
     const [userName,setuserName] = useState("");
     const [mobile,setmobile] = useState("");
-    const [otp,setotp] =useState("");
+    const [otparray,setotparray] =useState(new Array(otpDigits).fill(""));
     const [showotp,setshowotp]=useState(false);
     const [err,seterr]=useState(false);
     const [otperr,setotperr]=useState(false);
+    const refArr=useRef([]);
 
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        refArr.current[0]?.focus();//it will focus the first inpout box of otp
+    },[])
+
+    const handleBackspace = (e,index)=>{
+        //this function will lead focus to previous input tag when ever backspace key is presses
+        //console.log(e); this is to check name of event
+        if(!e.target.value && e.key==="Backspace"){
+            refArr.current[index-1]?.focus();
+        }
+    }
+
+    const changeOtparray =(value,index)=>{
+        //console.log(value);
+        if(isNaN (value)) return;//this prevents from entering an input which is not a number
+        const newValue=value.trim();//this is done to remove is space is entered
+        const newArr=[...otparray];//create new array and update our old using spread opoerator to copy
+        newArr[index] = value.slice(-1);//slice(-1) will show only last value of input entered by user for ex-if user give 34559 only 9 will enter
+        setotparray(newArr);
+        newValue && refArr.current[index+1]?.focus();
+    }
 
     const handleSignup = async () =>{
         try{
@@ -34,6 +59,7 @@ const SignUp = ()=>{
     }
 
     const handleLogin=async ()=>{
+        //here we write logic for otp generation also
         seterr(false);
         try{
             await axios.post(loginurl,{mobile},{withCredentials:true});
@@ -46,20 +72,24 @@ const SignUp = ()=>{
         }
     }
 
-    const checkOtp =()=>{
-        if(otp==="0000")
-        {
+    const checkOtp =async()=>{
+        try{
+            //here we write logic for checking otp
+            const otp =otparray.join("");//converting array elements into string
+            await axios.post(verifyotpurl,{mobile,otp},{withCredentials:true});
             navigate("/home");
         }
-        else{
+        catch(err){
+            console.log(err);
             setotperr(true);
         }
     }
 
-
+    //console.log(otparray)
+    
     return(
         <div className="relative">
-            <img id="bg-image" src={bg} className="w-full h-screen" />
+            <img id="bg-image" src={bg} className="w-full h-screen"/>
             <div id="button" className="absolute left-15 top-110">
                 <button onClick={()=>{
                     setopen(true);
@@ -71,7 +101,15 @@ const SignUp = ()=>{
                 <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
                     <div className="w-110  bg-black/20 rounded-xl border border-gray-400 backdrop-blur-xl">
                         <img src={logo} className="w-14 h-14 mt-6 mx-auto"/>
-                        <button onClick={()=>setopen(false)} to="/" className="hover:cursor-pointer absolute top-2 right-3 text-2xl font-medium scale-x-[1.5] scale-y-[1.3] mr-3 mt-1 text-gray-200">x</button>
+                        <button onClick={()=>{
+                            setopen(false);
+                            setmobile("");
+                            setotparray(new Array(otpDigits).fill(""));
+                            setuserName("");
+                            seterr(false);
+                            setotperr(false);
+                            setshowotp(false);
+                        }} to="/" className="hover:cursor-pointer absolute top-2 right-3 text-2xl font-medium scale-x-[1.5] scale-y-[1.3] mr-3 mt-1 text-gray-200">x</button>
                         <h1 className="text-center text-gray-200 mt-3 text-3xl font-sans font-semibold">{mode === "signup" ? "Welcome to Snikket" : "Welcome Back"}</h1>
                         <p className="text-center text-gray-400 text-lg font-serif font-medium">{mode === "signup" ? "Built for the bold." : "Your style awaits."}</p>
                         <div className="mt-10 space-y-4">
@@ -117,17 +155,23 @@ const SignUp = ()=>{
                                                 <p className="ml-6 text-md font-sans text-red-400">*Incorrect OTP*</p>
                                             </div>
                                         )}
-                                        <div className="flex items-center bg-[#333032] mt-6 border border-gray-500/40 rounded-lg px-4 py-3 backdrop-blur-md ml-5 mr-5">
-                                            <svg className="w-5 h-5 text-gray-200 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 11c1.66 0 3-1.34 3-3V6a3 3 0 10-6 0v2c0 1.66 1.34 3 3 3zm-7 2a2 2 0 00-2 2v5a2 2 0 002 2h14a2 2 0 002-2v-5a2 2 0 00-2-2H5z"/>
+                                        <div className=" flex">
+                                            <svg className="w-9 h-12 mt-2 text-gray-100/70 mr-3 ml-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 3h8a2 2 0 012 2v14a2 2 0 01-2 2H8a2 2 0 01-2-2V5a2 2 0 012-2z"/>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 8h6M9 12h3"/>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M14.5 16.5l1.5 1.5 3-3"/>
                                             </svg>
-                                            <input type="tel" value={otp} onChange={(e) => setotp(e.target.value)} required placeholder="Enter OTP" className="bg-transparent outline-none text-gray-200 w-full placeholder-gray-200"/>
+                                            <div>
+                                                {otparray.map((input,index)=>{
+                                                    return <input onChange={(e)=>changeOtparray(e.target.value,index)} className="text-center font-lg bg-[#2f2c2c] outline-none text-gray-200  border border-gray-100/70 h-12 w-12 m-2 placeholder-gray-100/50 rounded-lg" key={index} type="text" value={otparray[index]} onKeyDown={(e)=>handleBackspace(e,index)} ref={(input)=>(refArr.current[index]=input)}/>
+                                                })}
+                                            </div>
                                         </div>
                                         <p className="text-center text-gray-400 ">Didn’t receive the OTP? <span className="underline text-red-400 hover:cursor-pointer ml-1">Click to Resend</span></p>
                                     </>
                                     )}
                                     <div>
-                                        <button onClick={showotp ? checkOtp : handleLogin}  className="text-gray-200 bg-[#1a1a1a] rounded-xl mt-3 text-md font-semibold font-sans ml-37 px-4 py-2 border border-gray-400 hover:cursor-pointer hover:text-red-400">{showotp ? "Submit OTP →" : "Get OTP →"}</button>
+                                        <button onClick={showotp ? checkOtp : handleLogin}  className="text-gray-200 bg-[#1a1a1a] rounded-xl mt-3 text-md font-semibold font-sans ml-39 px-4 py-2 border border-gray-400 hover:cursor-pointer hover:text-red-400">{showotp ? "Submit OTP →" : "Get OTP →"}</button>
                                     </div>
                                 </>
                             )}
@@ -136,6 +180,10 @@ const SignUp = ()=>{
                         <h1 className="text-center text-gray-400 mt-5 mb-8">{mode === "signup" ? "Already an User?" : "New User?"}<span>
                             <button onClick={()=>{
                                 setopen(true);
+                                setmobile("");
+                                setuserName("");
+                                seterr(false);
+                                setotperr(false);
                                 setMode(prev => (prev === "signup" ? "login" : "signup"));//prev means value of mode before click and it says if value of mod===signup than chnage to login else change to signup
                             }} className="underline text-red-400 hover:cursor-pointer ml-1">Click
                             </button></span> {mode === "signup" ? "to Login" : "to Signup"}</h1>

@@ -4,6 +4,13 @@ import axios from "axios";
 
 import { getloginuserurl } from "./utils/constants";
 import Header from "./header";
+import Coins from "./coins";
+import Faqs from "./FAQ'S";
+import Help from "./help";
+import Coupans from "./coupans";
+import About from "./aboutus";
+import Sellon from "./sellonsnikket";
+import MyOrders from "./myorders";
 
 const Settings =()=>{
 
@@ -83,31 +90,31 @@ const Settings =()=>{
                 </div>
 
                 {activeitem==="My Orders" &&(
-                    <div>These are my orders</div>
+                    <MyOrders/>
                 )}
 
                 {activeitem==="Snikket Coins" &&(
-                    <div>These are my coins</div>
+                    <Coins/>
                 )}
 
                 {activeitem==="Coupans" &&(
-                    <div>These are my coupans</div>
+                    <Coupans/>
                 )}
 
                 {activeitem==="Help Center" &&(
-                    <div>This is hep center page</div>
+                    <Help/>
                 )}
 
                 {activeitem==="FAQ'S" &&(
-                    <div>this is faq page</div>
+                    <Faqs/>
                 )}
 
                 {activeitem==="About Us" &&(
-                    <div>this is about us page</div>
+                    <About/>
                 )}
                 
                 {activeitem==="Sell on Snikket" &&(
-                    <div>Producers page</div>
+                    <Sellon/>
                 )}
 
             </div>

@@ -95,7 +95,7 @@ const Denims =()=>{
                 <div className="fixed top-6 ml-36 left-1/2 -translate-x-1/2 z-50 animate-bounce">
                     <div className="bg-black text-red-400 px-8 py-4 rounded-2xl shadow-2xl border border-black backdrop-blur-md flex items-center gap-3">
                         <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-                        <span className="font-semibold tracking-wide text-sm sm:text-base">Item added to cart successfully</span>
+                        <span className="font-semibold tracking-wide text-sm sm:text-base">Item added to cart</span>
                     </div>
                 </div>
             )}
@@ -119,17 +119,14 @@ const Denims =()=>{
             )}
 
             <div className="flex">
-                <div className="w-72 bg-white border-r border-gray-300 min-h-screen p-6 fixed top-20">
-
+                <div id="filters" className="w-72 bg-white border-r border-gray-300 min-h-screen p-6 fixed top-20">
                     <div className="flex items-center justify-between mb-6">
                         <h1 className="text-2xl font-bold text-red-400">Filters</h1>
                         <button className="text-sm text-gray-500 hover:text-red-400 transition cursor-pointer">Clear All</button>
                     </div>
 
                     <div className="border-b border-gray-200 pb-5">
-
                         <h2 className="text-lg font-semibold text-gray-800 mb-4">Price Range</h2>
-
                         <div className="flex flex-col gap-3 text-sm text-gray-700">
                             <label className="flex items-center gap-3 cursor-pointer hover:text-red-400 transition">
                                 <input type="radio" name="price" className="accent-red-400" />Under ₹500
@@ -169,7 +166,7 @@ const Denims =()=>{
 
                 </div>
 
-                <div className="max-w-7xl ml-72  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6 mt-10 w-screen">
+                <div id="items" className="max-w-7xl ml-72  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6 mt-10 w-screen">
                 {items.map((item, i) => (
                     <div key={i} className="bg-white shadow-md hover:shadow-xl transition overflow-hidden group mb-5">
 

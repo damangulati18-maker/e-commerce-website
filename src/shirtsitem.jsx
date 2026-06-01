@@ -95,7 +95,7 @@ const Shirts =()=>{
                 <div className="fixed top-6 ml-36 left-1/2 -translate-x-1/2 z-50 animate-bounce">
                     <div className="bg-black text-red-400 px-8 py-4 rounded-2xl shadow-2xl border border-black backdrop-blur-md flex items-center gap-3">
                         <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-                        <span className="font-semibold tracking-wide text-sm sm:text-base">Item added to cart successfully</span>
+                        <span className="font-semibold tracking-wide text-sm sm:text-base">Item added to cart</span>
                     </div>
                 </div>
             )}

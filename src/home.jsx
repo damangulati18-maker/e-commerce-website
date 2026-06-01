@@ -13,7 +13,7 @@ import Header from "./header"
 const Home = () => {
 
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-300/80">
 
       <Header/>
 
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div id="credit card" className="hover:cursor-pointer max-w-3xl mx-auto mt-15 rounded-2xl overflow-hidden bg-linear-to-r from-red-500 via-pink-500 to-red-600   shadow-xl flex items-center">
+      <div id="credit card" className="hover:cursor-pointer max-w-3xl mx-auto mt-15 rounded-2xl overflow-hidden bg-linear-to-r from-red-400 via-red-900 to-black/90   shadow-xl flex items-center">
           <div className="text-white px-6 py-6 flex-1">
               <p className="text-xs uppercase tracking-widest opacity-80">Limited Offer </p>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 leading-tight">Get up to 50% OFF</h2>
@@ -53,8 +53,8 @@ const Home = () => {
               
               <div className="p-5 text-center">
                   <h3 className="font-semibold text-lg text-gray-800">Traditional & Ethnic Wear</h3>
-                  <div className="w-10 h-1 bg-red-400 mx-auto mt-2 rounded-full"></div>
-                  <button className="mt-4 px-5 py-2 bg-red-400 border border-red-400 text-white rounded-xl  hover:bg-white hover:text-red-400 transition hover:border-red-400 hover:cursor-pointer">View All</button>
+                  <div className="w-10 h-1 bg-red-500/90 mx-auto mt-2 rounded-full"></div>
+                  <button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button>
               </div>
           </div>
 
@@ -65,8 +65,8 @@ const Home = () => {
 
               <div className="p-5 text-center">
                     <h3 className="font-semibold text-lg text-gray-800">Casual Daily Wear</h3>
-                    <div className="w-10 h-1 bg-red-400 mx-auto mt-2 rounded-full"></div>
-                    <button className="mt-4 px-5 py-2 bg-red-400 border border-red-400 text-white rounded-xl  hover:bg-white hover:text-red-400 transition hover:border-red-400 hover:cursor-pointer">View All</button>
+                    <div className="w-10 h-1 bg-red-500/90 mx-auto mt-2 rounded-full"></div>
+                    <button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button>
               </div>
           </div>
 
@@ -77,13 +77,13 @@ const Home = () => {
 
               <div className="p-5 text-center">
                   <h3 className="font-semibold text-lg text-gray-800">Formal Collection</h3>
-                  <div className="w-10 h-1 bg-red-400 mx-auto mt-2 rounded-full"></div>
-                  <button className="mt-4 px-5 py-2 bg-red-400 border border-red-400 text-white rounded-xl  hover:bg-white hover:text-red-400 transition hover:border-red-400 hover:cursor-pointer">View All</button>
+                  <div className="w-10 h-1 bg-red-500/90 mx-auto mt-2 rounded-full"></div>
+                  <button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button>
               </div>
           </div>
       </div>
 
-      <div id="newuseroff" className="max-w-3xl mx-auto mt-15 rounded-2xl overflow-hidden bg-linear-to-r from-red-400 via-red-500 to-pink-500 shadow-lg text-center text-white px-6 py-6 relative">
+      <div id="newuseroff" className="max-w-3xl mx-auto mt-15 rounded-2xl overflow-hidden bg-linear-to-r from-red-400 via-red-900 to-black/90 shadow-lg text-center text-white px-6 py-6 relative">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
           <p className="text-sm uppercase tracking-widest opacity-80"> Special Offer</p>
           <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Flat ₹300 Off on Your First Purchase</h2>
@@ -96,22 +96,26 @@ const Home = () => {
           <p className="text-gray-500 mt-3 text-sm">Grab limited-time discounts before the month ends</p>
       </div>
 
-      <div id="mothoffers" className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 px-6 mt-6">
+      <div id="mothoffers" className="max-w-7xl grid md:grid-cols-3 gap-12 px-6 mt-9 mx-20">
         <MonthOffers/>
       </div>
 
-      <div id="heading3" className="text-center mt-18 mb-10">
-          <h2 className="text-4xl font-extrabold text-gray-800"> What's New</h2>
-          <div className="w-20 h-1 bg-red-400 mx-auto mt-3 rounded-full"></div>
-          <p className="text-gray-500 mt-3 text-sm">Clothing X Porsche</p>
-          <div className="max-w-5xl mx-auto mt-6 px-6">
-              <img src={porsche} alt="Clothing X Porsche" className="w-full h-105 object-cover rounded-2xl shadow-xl"/>
-          </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mt-6">Premium Style for All Occasions</h3>
-          <p className="text-gray-500 mt-2 text-sm"> Designed for everyday comfort, luxury, and performance-inspired fashion</p> 
+      <div id="heading3" className="text-center mt-18 pb-15 bg-black">
+            <h2 className="text-4xl font-extrabold text-gray-100 pt-15"> What's New</h2>
+            <p className="text-gray-100/60 mt-3 text-sm">Exclusive Drop</p>
+            <div className="w-20 h-1 bg-red-400 mx-auto mt-3 rounded-full"></div>
+            <p className="text-gray-100/60 mt-3 text-sm">Clothing X Porsche</p>
+            <div className="max-w-5xl mx-auto mt-6 px-6">
+                <img src={porsche} alt="Clothing X Porsche" className="w-full h-105 object-cover rounded-2xl shadow-xl"/>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-100 mt-6">Premium Style for All Occasions</h3>
+            <p className="text-gray-100/60 mt-2 text-sm"> Designed for everyday comfort, luxury, and performance-inspired fashion</p> 
       </div>
 
-      <footer id="footer" className="bg-gray-900 text-gray-300 mt-10 py-12">
+      <div className="border border-gray-100/10">
+      </div>
+
+      <footer id="footer" className="bg-black text-gray-300 py-12">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
               <div>
                   <h2 className="text-white text-2xl font-bold">Snikket</h2>
@@ -119,13 +123,13 @@ const Home = () => {
               </div>
 
               <div>
-                  <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+                  <h3 className="text-red-400 text-lg font-semibold mb-4">Quick Links</h3>
                   <div className="flex flex-col gap-2 text-sm">
-                      <Link  className="hover:text-red-400 transition">About Us</Link>
+                      <Link to="/settings"  className="hover:text-red-400 transition">About Us</Link>
                       <Link  className="hover:text-red-400 transition">Privacy Policy</Link>
-                      <Link  className="hover:text-red-400 transition">Return & Refund</Link>
-                      <Link  className="hover:text-red-400 transition">Contact Us</Link>
-                      <Link  className="hover:text-red-400 transition">Shipping Policy</Link>
+                      <Link to="/settings" className="hover:text-red-400 transition">FAQ'S</Link>
+                      <Link to="/settings" className="hover:text-red-400 transition">Contact Us</Link>
+                      <Link to="/settings" className="hover:text-red-400 transition">Become a Seller</Link>
               </div>
           </div>
           

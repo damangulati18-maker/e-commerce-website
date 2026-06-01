@@ -12,3 +12,5 @@ export const getcarturl="http://localhost:5001/getcartdata";
 export const clearcarturl="http://localhost:5001/clearcart";
 export const removeitemurl="http://localhost:5001/removeitemfromcart";
 export const getloginuserurl="http://localhost:5001/logindetails";
+export const verifyotpurl="http://localhost:5001/verify-otp";
+export const getcoinsurl="http://localhost:5001/getcoins";

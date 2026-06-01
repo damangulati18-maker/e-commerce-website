@@ -1,9 +1,18 @@
 import { Link } from "react-router";
 
 import address from "./images/address.PNG"
+import { useState } from "react";
 
+import cardimg from "../src/images/cardpay.png"
+import codimg from "../src/images/cod.png"
+import upiimg from "../src/images/upi.png"
 
 const Payment=()=>{
+
+    const [cardpay,setcardpay] = useState(false);
+    const [upipay,setupipay] = useState(false);
+    const [codpay,setcodpay] = useState(false);
+
     return(
     <div className="relative w-full min-h-screen">
         <img src={address} className="absolute inset-0 w-full h-full object-cover" />
@@ -38,68 +47,91 @@ const Payment=()=>{
 
                 <h6 className="texts-xs font-medium text-gray-200/50 mt-0.5 mb-5 ">• All transactions are secure and encrypted •</h6>
 
-                <form id="form" className="flex flex-col gap-4 text-white">
-                    <div className="flex items-center gap-2  bg-white/10 border border-white/20 rounded-lg px-3 py-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#f87171" className="w-6 h-6">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-4.41 0-8 2.24-8 5v1h16v-1c0-2.76-3.59-5-8-5z" />
-                        </svg>
-                        <input type="text" placeholder="Full Name" className="w-full bg-transparent outline-none placeholder-white/60"/>
-                    </div>
+                <div id="outer box" className="flex flex-col gap-4 text-white">
 
-                    <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2">
-                        <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeWidth="2" d="M16 12H8m8-4H8m8 8H8M4 6h16v12H4z"/>
-                         </svg>
-                        <input type="email" placeholder="Email Address" className="w-full bg-transparent outline-none placeholder-white/60"/>
-                    </div>
-
-                    <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2">
-                        <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
-                        </svg>
-                        <input type="tel" placeholder="Phone Number" className="w-full bg-transparent outline-none placeholder-white/60"/>
-                    </div>
-
-                    <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2">
-                        <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
-                        </svg>
-                        <input type="tel" placeholder="Alternate phone Number" className="w-full bg-transparent outline-none placeholder-white/60"/>
-                    </div>
- 
-                    <div className="flex items-start gap-1 bg-white/10 border border-white/20 rounded-lg px-2 py-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-7 h-6 mt-1 text-red-400 shrink-0" fill="currentColor">
-                            <path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z" />
-                        </svg>
-                        <textarea placeholder="Full Address" className="w-full bg-transparent outline-none placeholder-white/60 resize-none pt-1" rows={3}/>
-                    </div>
-                   
-
-                   <div id="city/pincode" className="grid grid-cols-2 gap-3">
-                        <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2">
-                            <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 21h18v-2H3v2zm2-3h2V8H5v10zm4 0h3V5H9v13zm5 0h2V11h-2v7zm4 0h2V7h-2v11z" />
-                            </svg>
-                            <input type="text" placeholder="City" className="w-full bg-transparent outline-none placeholder-white/60"/>
+                    <div id="cardpay" className=" w-109 bg-white/10 border border-white/20 rounded-lg">
+                        <div className="flex">
+                            <div onClick={() => {
+                                setcardpay(!cardpay);
+                                setcodpay(false);
+                                setupipay(false);
+                            }} className={`h-4 w-4 mt-6.25 ml-2 rounded-full border border-white/70 cursor-pointer transition-all duration-200 ${cardpay ? "bg-red-400" : "bg-transparent"}`}/>
+                            <h1 className="text-sm text-white/70 ml-1.5 mt-6 mb-2 font-sans font-medium">Credit Card or Debit Card</h1>
+                            <img src={cardimg} className="w-45 h-18 ml-12" alt="cardimage"/>
                         </div>
 
-                        <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2">
-                            <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeWidth="2" d="M9 12h6M9 16h6M7 4h10v16H7z"/>
-                            </svg>
-                            <input type="text" placeholder="Pincode" className="w-full bg-transparent outline-none placeholder-white/60"/>
+                        {cardpay &&(
+                            <form>
+                                <div className="flex items-center gap-2 mx-4 mb-4 bg-white/10 border border-white/20 rounded-lg px-3 py-2">
+                                    <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4H4V6h16v2zm0 8H4v-6h16v6zM6 14h4v2H6v-2z" />
+                                    </svg>
+                                    <input type="text" placeholder="Card Number" className="w-full bg-transparent outline-none placeholder-white/60"/>
+                                </div>
+                                
+                                <div className="flex gap-3 mb-4">
+                                    <div id="expire date" className=" ml-4 flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2 w-1/2">
+                                        <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 2a1 1 0 000 2h1v1h8V4h1a1 1 0 100-2H7z"/>
+                                            <path d="M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2zm0 4v12h14V8H5z"/>
+                                            <path d="M7 10h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM7 14h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
+                                        </svg>
+                                        <input type="text" placeholder="MM/YY"className="w-full bg-transparent outline-none placeholder-white/60"/>
+                                    </div>
+                                    <div id="CVV" className="mr-4 flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-3 py-2 w-1/2">
+                                        <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 1a5 5 0 00-5 5v3H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V11a2 2 0 00-2-2h-1V6a5 5 0 00-5-5zm-3 8V6a3 3 0 016 0v3H9zm3 4a2 2 0 110 4 2 2 0 010-4z" />
+                                        </svg>
+                                    <input type="password" placeholder="CVV" maxLength={4} className="w-full bg-transparent outline-none placeholder-white/60"/>
+                                   </div>
+                                </div>
+
+                                <div className="flex items-center justify-center mb-4 mt-2">
+                                    <button className="bg-red-400 px-4 font-sans font-medium hover:cursor-pointer py-2 text-center rounded-lg">Submit</button>
+                                </div>
+                            </form>
+                        )}
+                    </div>
+
+                    <div id="upipay" className=" w-109 bg-white/10 border border-white/20 rounded-lg">
+                        <div className="flex">
+                            <div onClick={() =>{
+                                setupipay(!upipay);
+                                setcardpay(false);
+                                setcodpay(false);
+                            }} className={`h-4 w-4 mt-6.5 ml-2 rounded-full border border-white/70 cursor-pointer transition-all duration-200 ${upipay ? "bg-red-400" : "bg-transparent"}`}/>
+                            <h1 className="text-sm text-white/70 ml-1.5 mt-6 mb-2 font-sans font-medium">Pay using upi</h1>
+                            <img src={upiimg} className="w-45 h-15 ml-29 mt-3" alt="upi"/>
+                        </div>
+
+                        {upipay &&(
+                            <img/>
+                        )}
+
+                    </div>
+
+                    <div id="codpay" className=" w-109 bg-white/10 border border-white/20 rounded-lg">
+                        <div className="flex">
+                            <div onClick={() => {
+                                setcodpay(!codpay);
+                                setcardpay(false);
+                                setupipay(false);
+                            }} className={`h-4 w-4 mt-4.75 ml-2 rounded-full border border-white/70 cursor-pointer transition-all duration-200 ${codpay ? "bg-red-400" : "bg-transparent"}`}/>
+                            <h1 className="text-sm text-white/70 ml-1.5 mt-4.5 mb-2 font-sans font-medium">Cash on delivery</h1>
+                            <img src={codimg} className="w-13 h-13 ml-56" alt="cod"/>
                         </div>
                     </div>
+                    
                     
                     <div className="mt-6 flex gap-4">
                         <Link to="/address" className="flex-1">
                             <button className="w-full py-3 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md text-white font-medium hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">← Back</button>
                         </Link>
                         <Link to="/payment" className="flex-1">
-                            <button className="w-full py-3 rounded-xl bg-red-400 text-white font-semibold shadow-lg shadow-red-500/30 hover:scale-[1.02] hover:shadow-red-500/50 hover:bg-red-500 transition-all duration-300 cursor-pointer">Pay Now →</button>
+                            <button className="w-full py-3 rounded-xl bg-red-400 text-white font-semibold shadow-lg shadow-red-500/30 hover:scale-[1.02] hover:shadow-red-500/50 hover:bg-red-500 transition-all duration-300 cursor-pointer">Confirm →</button>
                         </Link>
                     </div>
-                </form>
+                </div>
 
             </div>
         </div>

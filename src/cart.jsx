@@ -16,7 +16,8 @@ const Cart =()=>{
 
     const clearcart=async()=>{
         try{
-            await axios.patch(clearcarturl,{});
+            await axios.post(clearcarturl,{},{withCredentials:true});
+            setcart([]);
         }
         catch(err){
             console.error(err);
@@ -25,7 +26,8 @@ const Cart =()=>{
 
     const removeItem=async(id,loguser)=>{
         try{
-            await axios.delete(removeitemurl,{data:{deleteobjid:id,loguser: loguser}});
+            await axios.post(removeitemurl,{deleteobjid:id,loguser: loguser},{withCredentials:true});
+            setcart(prev => prev.filter(item => item._id !== id));
         }
         catch(err){
             console.error(err);
@@ -170,6 +172,7 @@ const Cart =()=>{
                     </svg>
                     Clear Cart
                 </button>
+                <p className="text-gray-100/70 font-sans font-light text-sm mt-5 ml-3">*You will get {cart.reduce((acc, item) => acc + item.price, 0)/10} <span className="text-red-400">Snikket coins</span> on this purchase*</p>
             </div>
 
         </div>

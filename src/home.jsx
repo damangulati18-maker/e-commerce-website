@@ -17,6 +17,16 @@ const Home = () => {
 
       <Header/>
 
+      <Link id="ai button" to="/AIsearch">
+        <div className="fixed right-6 bottom-20 z-50 group animate-bounce">
+            <div className="bg-black text-white border border-red-400 hover:bg-red-400 hover:text-black transition-all duration-300 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 cursor-pointer">
+                <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></span>
+                <span className="text-sm font-semibold whitespace-nowrap">Try AI Suggestions →</span>
+            </div>
+            <div className="absolute right-0 -top-10 opacity-0 group-hover:opacity-100 transition bg-white text-black text-xs px-3 py-1 rounded-md shadow-md whitespace-nowrap">Smart shopping assistant ✨</div>
+        </div>
+      </Link>
+
       <div id="top image" className="max-w-6xl mx-auto px-6 mt-6">
         <div className="relative rounded-xl overflow-hidden shadow-lg">
           <img src={topimg} className="w-full h-137 object-cover"/>

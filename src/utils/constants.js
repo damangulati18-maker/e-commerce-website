@@ -23,3 +23,4 @@ export const paymenturl="http://localhost:5001/create-checkout-session"
 export const updateCoinsCartbill="http://localhost:5001/clearcartbill/updatecoins/ordersuccess";
 export const updatemyordersurl="http://localhost:5001/addoderdetails/tomyorders";
 export const getmyordersurl="http://localhost:5001/getlistofmyorders";
+export const aisearchurl="http://localhost:5001/shoppingassisstant";

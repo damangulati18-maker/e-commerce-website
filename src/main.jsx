@@ -15,6 +15,7 @@ import Category from './category';
 import OrderPlaced from './orderplaced';
 import OrderNotPlaced from './ordernotplaced';
 import PrivacyPolicy from './privacypolicy';
+import AiShop from './AI';
 
 
 
@@ -56,6 +57,9 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/privacypolicy",element:<PrivacyPolicy/>
+      },
+      {
+        path:"/AIsearch",element:<AiShop/>
       }
     ]
   }

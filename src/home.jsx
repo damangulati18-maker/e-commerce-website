@@ -54,7 +54,7 @@ const Home = () => {
               <div className="p-5 text-center">
                   <h3 className="font-semibold text-lg text-gray-800">Traditional & Ethnic Wear</h3>
                   <div className="w-10 h-1 bg-red-500/90 mx-auto mt-2 rounded-full"></div>
-                  <button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button>
+                  <Link to="/category" state={{type:"traditional"}}><button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button></Link>
               </div>
           </div>
 
@@ -66,7 +66,7 @@ const Home = () => {
               <div className="p-5 text-center">
                     <h3 className="font-semibold text-lg text-gray-800">Casual Daily Wear</h3>
                     <div className="w-10 h-1 bg-red-500/90 mx-auto mt-2 rounded-full"></div>
-                    <button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button>
+                    <Link to="/category" state={{type:"casual"}}><button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button></Link>
               </div>
           </div>
 
@@ -78,7 +78,7 @@ const Home = () => {
               <div className="p-5 text-center">
                   <h3 className="font-semibold text-lg text-gray-800">Formal Collection</h3>
                   <div className="w-10 h-1 bg-red-500/90 mx-auto mt-2 rounded-full"></div>
-                  <button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button>
+                  <Link to="/category" state={{type:"formal"}}><button className="mt-4 px-5 py-2 bg-red-500/90 border border-red-500/90 text-white rounded-xl  hover:bg-white hover:text-red-500/90 transition hover:border-red-500/90 hover:cursor-pointer">View All</button></Link>
               </div>
           </div>
       </div>
@@ -126,7 +126,7 @@ const Home = () => {
                   <h3 className="text-red-400 text-lg font-semibold mb-4">Quick Links</h3>
                   <div className="flex flex-col gap-2 text-sm">
                       <Link to="/settings"  className="hover:text-red-400 transition">About Us</Link>
-                      <Link  className="hover:text-red-400 transition">Privacy Policy</Link>
+                      <Link to="/privacypolicy"  className="hover:text-red-400 transition">Privacy Policy</Link>
                       <Link to="/settings" className="hover:text-red-400 transition">FAQ'S</Link>
                       <Link to="/settings" className="hover:text-red-400 transition">Contact Us</Link>
                       <Link to="/settings" className="hover:text-red-400 transition">Become a Seller</Link>

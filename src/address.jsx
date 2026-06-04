@@ -4,6 +4,7 @@ import address from "./images/address.PNG"
 
 
 const Address=()=>{
+
     return(
     <div className="relative w-full min-h-screen">
         <img src={address} className="absolute inset-0 w-full h-full object-cover" />

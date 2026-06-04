@@ -24,12 +24,12 @@ const Header =()=>{
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <img className="h-14" src={logo} alt="logo"/>
           <ul className="flex">
-            <Link to="/shirts"><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shirts</li></Link>
-            <Link to="/regular"><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">T-Shirts</li></Link>
-            <Link to="/oversized"><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Oversized</li></Link>
-            <Link to="/denims"><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Jeans</li></Link>
-            <Link to="/shorts"><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shorts</li></Link>
-            <Link to="/joggers"><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Jogggers</li></Link>
+            <Link to="/collection" state={{type:"shirts"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shirts</li></Link>
+            <Link to="/collection" state={{type:"regular"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">T-Shirts</li></Link>
+            <Link to="/collection" state={{type:"oversized"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Oversized</li></Link>
+            <Link to="/collection" state={{type:"denims"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Jeans</li></Link>
+            <Link to="/collection" state={{type:"shorts"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shorts</li></Link>
+            <Link to="/collection" state={{type:"joggers"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Jogggers</li></Link>
             <li id="hammenu" className="relative">
               <svg onClick={() => setOpen(!open)} xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black hover:text-red-400 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"/>

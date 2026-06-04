@@ -40,7 +40,7 @@ const Coins=()=>{
                 </div>
             </div>
 
-            <div id="how to earn" className="bg-[#1e1c1c] h-100 w-150 mt-25 mx-auto rounded-3xl shadow-2xl">
+            <div id="how to earn" className="bg-[#1e1c1c] h-100 w-150 mt-25 mb-30 mx-auto rounded-3xl shadow-2xl">
                 <p className="text-gray-100/70 text-sm font-sans font-light pt-7 ml-8">HOW TO EARN</p>
                 <div className="flex flex-wrap gap-4 mt-6 ">
                     <div className="bg-[#181717] w-65 h-34 rounded-2xl border border-gray-100/20 ml-7.5 hover:border-red-400">
@@ -67,22 +67,6 @@ const Coins=()=>{
                         <p className="text-gray-100/70 text-xs font-medium ml-4 mt-2">Follow on social media to get 50 coins</p>
                     </div>
                 </div>
-            </div>
-
-            <div id="transaction" className="bg-[#1e1c1c] h-130 w-150 mt-25 mx-auto rounded-3xl shadow-2xl mb-30 overflow-y-auto">
-                <p className="text-gray-100/70 text-sm font-sans font-light pt-7 ml-8">TRANSACTION HISTORY</p>
-
-                <div className="mx-7 mt-7" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.75rem 0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                        <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(74,222,128,0.50)", display: "flex", alignItems: "center", justifyContent: "center",}}>↓</div>
-                        <div>
-                            <p className="text-gray-100" style={{ fontSize: "0.85rem", fontWeight: 500 }}>Welcome Bonus</p>
-                            <p className="text-gray-100/70" style={{ fontSize: "0.72rem", color: "#555" }}>12 Jan 2025</p>
-                        </div>
-                </div>
-
-                <p style={{ fontWeight: 700, fontSize: "0.9rem", color: "#4ade80" }}>+100</p>
-            </div>
             </div>
         </div>
     )

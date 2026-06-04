@@ -12,14 +12,14 @@ const MonthOffers = ()=>{
     return(
       <>
         {[
-          { name: "Pure Cotton Oversized T-shirts", price: "399",photo:oversize,path:"/oversized",off:"45% OFF"},
-          { name: "Premium Regular Tee", price: "299",photo:regular,path:"/regular",off:"40% OFF" },
-          { name: "Shorts Collection", price: "499",photo:shorts,path:"/shorts" ,off:"35% OFF"},
-          { name: "Formal & Casual Shirts", price: "699",photo:shirts,path:"/shirts" ,off:"10% OFF"},
-          { name: "WIde Range of Denims", price: "899",photo:denims,path:"/denims" ,off:"20% OFF"},
-          { name: "Premium Joggers", price: "799",photo:joggers,path:"/joggers" ,off:"50% OFF"},
+          { name: "Pure Cotton Oversized T-shirts", price: "399",photo:oversize,path:"oversized",off:"45% OFF"},
+          { name: "Premium Regular Tee", price: "299",photo:regular,path:"regular",off:"40% OFF" },
+          { name: "Shorts Collection", price: "499",photo:shorts,path:"shorts" ,off:"35% OFF"},
+          { name: "Formal & Casual Shirts", price: "699",photo:shirts,path:"shirts" ,off:"10% OFF"},
+          { name: "WIde Range of Denims", price: "899",photo:denims,path:"denims" ,off:"20% OFF"},
+          { name: "Premium Joggers", price: "799",photo:joggers,path:"joggers" ,off:"50% OFF"},
         ].map((item, i) => (
-          <Link to={item.path} >
+          <Link to="/collection" state={{type:item.path}}>
             <div key={i} className="bg-white rounded-xl shadow hover:shadow-2xl transition  hover:border hover:border-red-500/90 hover:cursor-pointer">
               <div className="h-64 rounded-xl">
                 <img src={item.photo} className="group-hover:scale-110 transition duration-500  h-64 w-full rounded-t-xl" alt="add photo"/>

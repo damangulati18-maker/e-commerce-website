@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 import { getcarturl,clearcarturl,removeitemurl,getloginuserurl,addcartbillcoins } from "./utils/constants";
-import empty from "../src/images/emptycart.png";
+import empty from "../src/images/empty cart.png";
 import Header from './header';
 
 const Cart =()=>{
@@ -113,8 +113,8 @@ const Cart =()=>{
                 <div>
                     <Header/>
                 </div>
-                <div className="bg-[#141212] h-screen ">
-                    <div className="bg-[#141212] pt-10">
+                <div className="bg-[#1a1919] h-screen ">
+                    <div className="bg-[#1a1919] pt-10">
                         <img className="w-65 m-auto h-75 pt-5 animate-bounce mt-5 shadow" src={empty}></img>
                     </div>
                     <div className="font-bold text-xl text-center p-2 text-red-400">Your cart is empty</div>

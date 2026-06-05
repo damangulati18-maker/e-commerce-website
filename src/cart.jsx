@@ -115,7 +115,7 @@ const Cart =()=>{
                 </div>
                 <div className="bg-[#141212] h-screen ">
                     <div className="bg-[#141212] pt-10">
-                        <img className="w-65 m-auto h-75 pt-5 animate-bounce mt-5" src={empty}></img>
+                        <img className="w-65 m-auto h-75 pt-5 animate-bounce mt-5 shadow" src={empty}></img>
                     </div>
                     <div className="font-bold text-xl text-center p-2 text-red-400">Your cart is empty</div>
                     <div className="text-center text-white pb-8">Go to home page and start building your cart now</div>

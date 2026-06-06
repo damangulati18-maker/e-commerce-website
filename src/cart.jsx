@@ -35,6 +35,7 @@ const Cart =()=>{
     const clearcart=async()=>{
         try{
             await axios.post(clearcarturl,{},{withCredentials:true});
+            await axios.post(addcartbillcoins,{cartBill:0,cartCoins:0 },{withCredentials:true});
             setcart([]);
         }
         catch(err){
@@ -108,6 +109,7 @@ const Cart =()=>{
     //if cart is empty we show this
     if(cart.length==0)
     {
+        clearcart();
         return(
             <div>
                 <div>

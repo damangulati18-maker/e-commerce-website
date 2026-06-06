@@ -4,9 +4,9 @@ import { Link } from "react-router";
 import axios from "axios";
 
 import { additemurl,formalurl,traditionalurl,casualurl } from "./utils/constants";
-import logo from "./images/app logo.png"
 import Filters from './filters';
 import Itemsgrid from './itemsgrid';
+import Header from './header';
 
 const Category=()=>{
 
@@ -152,7 +152,8 @@ const Category=()=>{
 
     return(
         <div className="bg-gray-200/90">
-            <div id="header" className="ml-72 px-8 pt-8 pb-2 flex justify-between items-start">
+            <Header/>
+            <div id="header" className="ml-80 px-8 pt-5 pb-2 flex justify-between items-start">
                 <div>
                     <p className="text-xs text-red-400 font-semibold uppercase tracking-widest mb-1">Explore</p>
                     <h1 className="text-3xl font-extrabold text-gray-800">Wide Range of <span className="text-red-400">{heading}</span></h1>
@@ -164,9 +165,7 @@ const Category=()=>{
                         <Link to="/category" state={{ type: "traditional" }}><button className={`px-5 py-2 text-sm font-semibold rounded-xl border border-red-400 transition hover:cursor-pointer ${type === "traditional" ? "bg-red-400 text-white" : "bg-white text-red-400 hover:bg-red-400 hover:text-white"}`}>Traditional</button></Link>
                     </div>
                 </div>
-                <div className="flex items-center gap-3">
-                    <Link to="/cart"><button className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600 bg-white border border-gray-200 rounded-xl hover:border-red-400 hover:text-red-400 transition hover:cursor-pointer shadow-sm">Cart</button></Link>
-                    <Link to="/settings"><button className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600 bg-white border border-gray-200 rounded-xl hover:border-red-400 hover:text-red-400 transition hover:cursor-pointer shadow-sm">Settings</button></Link>
+                <div className="flex items-center gap-3 mt-4 ">
                     <Link to="/home"><button className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-red-400 border border-red-400 rounded-xl hover:bg-white hover:text-red-400 transition hover:cursor-pointer shadow-sm">Go Back</button></Link>
                 </div>
             </div>
@@ -220,11 +219,6 @@ const Category=()=>{
                     </button>
                 </div>
             )}
-
-            <div id="logo" className="fixed top-0 left-0 bg-white w-72 pt-3 pl-4 border-r border-gray-300 h-30">
-                <img className="h-14" src={logo} alt="logo"/>
-                <div><hr className="text-gray-200 mr-6 mt-2"></hr></div>
-            </div>
 
             <div className="flex mb-4">
                 <Filters SelectedPrice={SelectedPrice}

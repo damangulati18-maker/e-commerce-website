@@ -20,18 +20,25 @@ const Header =()=>{
         }
     }
     return(
-        <header id="header" className="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-red-400">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <header id="header" className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto flex px-6 py-4">
           <img className="h-14" src={logo} alt="logo"/>
-          <div className=" text-3xl font-bold font-serif mr-106 mt-1">S<span className="text-red-400">ni</span>kket</div>
-          <ul className="flex">
-            <Link to="/collection" state={{type:"shirts"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shirts</li></Link>
-            <Link to="/collection" state={{type:"regular"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">T-Shirts</li></Link>
-            <Link to="/collection" state={{type:"oversized"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Oversized</li></Link>
-            <Link to="/collection" state={{type:"denims"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Jeans</li></Link>
-            <Link to="/collection" state={{type:"shorts"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shorts</li></Link>
-            <Link to="/collection" state={{type:"joggers"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Jogggers</li></Link>
-            <li id="hammenu" className="relative">
+          <div className=" text-3xl font-bold font-serif mt-3 ml-2">S<span className="text-red-500">ni</span>kket</div>
+          <ul className="flex mt-3 ml-43">
+            <Link to="/collection" state={{type:"shirts"}}><li className="text-xl font-semibold font-sans pr-9  hover:cursor-pointer hover:underline hover:text-red-400">Shirts</li></Link>
+            <Link to="/collection" state={{type:"regular"}}><li className="text-xl font-semibold font-sans pr-9 hover:cursor-pointer hover:underline hover:text-red-400">Tshirts</li></Link>
+            <Link to="/collection" state={{type:"oversized"}}><li className="text-xl font-semibold font-sans pr-9 hover:cursor-pointer hover:underline hover:text-red-400">Oversized</li></Link>
+            <Link to="/collection" state={{type:"denims"}}><li className="text-xl font-semibold font-sans pr-9 hover:cursor-pointer hover:underline hover:text-red-400">Jeans</li></Link>
+            <Link to="/collection" state={{type:"shorts"}}><li className="text-xl font-semibold font-sans pr-9 hover:cursor-pointer hover:underline hover:text-red-400">Shorts</li></Link>
+            <Link to="/collection" state={{type:"joggers"}}><li className="text-xl font-semibold font-sans pr-9 hover:cursor-pointer hover:underline hover:text-red-400">Jogggers</li></Link>
+            <Link to="/cart"><li className="ml-33  cursor-pointer">
+                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 hover:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" strokeLinecap="round" strokeWidth="1.5" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                     </li></Link>
+            <li id="hammenu" className="relative pl-9">
               <svg onClick={() => setOpen(!open)} xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black hover:text-red-400 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"/>
               </svg>
@@ -43,13 +50,6 @@ const Header =()=>{
                         </svg>
                         <span className="font-medium text-gray-700">Home</span>
                     </div></Link>
-
-                     <Link to="/cart"><div id="cart" className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer">
-                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6h11L17 13" />
-                         </svg>
-                         <span className="font-medium text-gray-700">Cart</span>
-                     </div></Link>
 
                      <Link to="/settings"><div id="profile" className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

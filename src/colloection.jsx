@@ -162,10 +162,10 @@ const Collection= () =>{
     //console.log(items);
 
     return(
-        <div className="bg-gray-200/90">
+        <div className="bg-gray-100">
             <Header/>
 
-            <div className="ml-72 px-8 pt-8 pb-2">
+            <div className="ml-80 px-8 pt-5">
                 <p className="text-xs text-red-400 font-semibold uppercase tracking-widest mb-1">Explore</p>
                 <h1 className="text-3xl font-extrabold text-gray-800"> <span className="text-black">{heading}</span></h1>
                 <div className="w-16 h-1 bg-red-400 rounded-full mt-2"></div>

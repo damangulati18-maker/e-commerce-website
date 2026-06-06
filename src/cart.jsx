@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 import { getcarturl,clearcarturl,removeitemurl,getloginuserurl,addcartbillcoins } from "./utils/constants";
-import empty from "../src/images/empty cart.png";
+import empty from "../src/images/emptycart.png";
 import Header from './header';
 
 const Cart =()=>{
@@ -115,18 +115,22 @@ const Cart =()=>{
                 <div>
                     <Header/>
                 </div>
-                <div className="bg-[#1a1919] h-screen ">
-                    <div className="bg-[#1a1919] pt-10">
-                        <img className="w-65 m-auto h-75 pt-5 animate-bounce mt-5 shadow" src={empty}></img>
-                    </div>
-                    <div className="font-bold text-xl text-center p-2 text-red-400">Your cart is empty</div>
-                    <div className="text-center text-white pb-8">Go to home page and start building your cart now</div>
+                <div className="bg-white">
+                    <img className="w-75 h-75 mx-auto animate-bounce mt-5" src={empty}></img>
+                    <h1 className="font-bold text-3xl text-center mb-4 ">Your cart is <span className=" text-red-400">empty</span></h1>
+                    <p className="text-center text-black/90 font-sans text-sm font-light pb-8">Looks like you haven't added anything yet.<br/>Explore our latest collection and find something you'll love</p>
                     <Link to="/home">
-                        <button className="relative mx-auto block px-8 py-3 rounded-xl font-semibold tracking-wide text-white bg-red-400 shadow-lg shadow-red-400/30 border border-red-300 
-                            transition-all duration-300 ease-out hover:bg-white hover:text-red-400 hover:cursor-pointer chover:shadow-red-400/40chover:scale-105 hover:-translate-y-1 active:scale-95 before:absolute before:inset-0 before:rounded-xl
-                           before:bg-red-300/20 before:blur-xl before:opacity-0 hover:before:opacity-100 overflow-hidden">SEE LATEST TRENDS <span className="ml-2">→</span>
-                        </button>
+                        <button className="relative mx-auto block px-8 py-3 rounded-xl font-semibold text-white bg-red-400  border border-red-400  transition-all duration-300 ease-out hover:bg-white hover:text-red-400 hover:cursor-pointer active:scale-95  shadow-[0_0_40px_10px_rgba(248,113,113,0.3)]">See Latest Trends <span className="ml-2">→</span></button>
                     </Link>
+                </div>
+                <div className="bg-white flex items-center justify-center mx-auto mt-8 shadow-2xl border border-red-400 mb-15 rounded-3xl h-20 max-w-4xl">
+                    <h1 className="text-black font-sans font-semibold">🥇 Premium Quality</h1>
+                    <p className="text-red-500 mx-8">|</p>
+                    <h1 className="text-black font-sans font-semibold ">📦 Easy Returns</h1>
+                    <p className="text-red-500 mx-8">|</p>
+                    <h1 className="text-black font-sans font-semibold ">🔒 Secure Payments</h1>
+                    <p className="text-red-500 mx-8">|</p>
+                    <h1 className="text-black font-sans font-semibold ">📞 Customer Support</h1>
                 </div>
             </div>
         )

@@ -93,7 +93,7 @@ const Home = () => {
           </div>
       </div>
 
-      <div id="newuseroff" className="max-w-3xl mx-auto mt-15 rounded-2xl overflow-hidden bg-linear-to-r from-red-400 via-red-900 to-black/90 shadow-lg text-center text-white px-6 py-6 relative">
+      <div id="newuseroff" className="w-screen mx-auto mt-15 py-15 overflow-hidden bg-linear-to-r from-red-400 via-red-900 to-black/90 shadow-lg text-center text-white px-6 relative">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
           <p className="text-sm uppercase tracking-widest opacity-80"> Special Offer</p>
           <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Flat ₹300 Off on Your First Purchase</h2>

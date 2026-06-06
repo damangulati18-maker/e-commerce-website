@@ -23,6 +23,7 @@ const Header =()=>{
         <header id="header" className="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-red-400">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <img className="h-14" src={logo} alt="logo"/>
+          <div className=" text-3xl font-bold font-serif mr-106 mt-1">S<span className="text-red-400">ni</span>kket</div>
           <ul className="flex">
             <Link to="/collection" state={{type:"shirts"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">Shirts</li></Link>
             <Link to="/collection" state={{type:"regular"}}><li className="text-xl font-semibold font-sans pr-6 hover:cursor-pointer hover:underline hover:text-red-400">T-Shirts</li></Link>

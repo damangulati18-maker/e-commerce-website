@@ -128,7 +128,7 @@ const Home = () => {
       <footer id="footer" className="bg-black text-gray-300 py-12">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
               <div>
-                  <h2 className="text-white text-2xl font-bold">Snikket</h2>
+                  <h2 className="text-white text-2xl font-bold font-serif">Snikket</h2>
                   <p className="text-gray-400 mt-3 text-sm leading-relaxed">Discover premium fashion collections crafted for comfort, style, and confidence.</p>
               </div>
 

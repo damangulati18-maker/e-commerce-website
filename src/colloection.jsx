@@ -173,33 +173,33 @@ const Collection= () =>{
 
             {showNotification && (
                 <div className="fixed top-15 left-1/2 ml-36 -translate-x-1/2 z-50 animate-[toastIn_.25s_ease-out]">
-                    <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-black/90 shadow-lg border border-black">
-                        <div className="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-red-50 border border-red-200">
-                            <span className="text-red-500 text-sm font-bold">✓</span>
+                    <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-green-100 shadow-lg border border-green-600">
+                        <div className="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-green-50 border border-green-300">
+                            <span className="text-green-500 text-sm font-bold">✓</span>
                         </div>
-                        <span className="text-red-500/90 mr-4 font-medium text-sm sm:text-base">Item added to cart</span>
+                        <span className="text-green-600 mr-4 font-medium text-sm sm:text-base">Item added to cart</span>
                     </div>
                 </div>
             )}
 
             {showSizeNotification && (
                 <div className="fixed top-15 left-1/2 ml-36 -translate-x-1/2 z-50 animate-[toastIn_.25s_ease-out]">
-                    <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-black/90 shadow-lg border border-black">
+                    <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-red-100 shadow-lg border border-red-600">
                         <div className="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-red-50 border border-red-200">
                             <span className="text-red-500 text-sm font-bold ">!</span>
                         </div>
-                        <span className="text-red-500/90 mr-4 font-medium text-sm sm:text-base">Please Select a Size first</span>
+                        <span className="text-red-500 mr-4 font-medium text-sm sm:text-base">Please Select a Size first</span>
                     </div>
                 </div>
             )}
 
             {shownostock && (
                 <div className="fixed top-15 left-1/2 ml-36 -translate-x-1/2 z-50 animate-[toastIn_.25s_ease-out]">
-                    <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-black/90 shadow-lg border border-black">
+                    <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-red-100 shadow-lg border border-red-600">
                         <div className="ml-2 w-9 h-9 flex items-center justify-center rounded-full bg-red-50 border border-red-200">
                             <span className="text-red-500 text-sm font-bold ">X</span>
                         </div>
-                        <span className="text-red-500/90 mr-4 font-medium text-sm sm:text-base">Out of Stock</span>
+                        <span className="text-red-500 mr-4 font-medium text-sm sm:text-base">Item out of Stock</span>
                     </div>
                 </div>
             )}

@@ -1,7 +1,7 @@
 import oversize from "./images/oversize.jpeg";
-import regular from "./images/regular.jpg"
+import regular from "./images/regular.jpeg"
 import shorts from "./images/shorts.jpeg"
-import shirts from "./images/shirt.jpg"
+import shirts from "./images/shirts.avif"
 import denims from "./images/denim.jpg"
 import joggers from "./images/joggers.jpg"
 

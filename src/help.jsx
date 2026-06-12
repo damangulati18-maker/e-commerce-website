@@ -57,7 +57,7 @@ const Help =() =>{
             )}
 
             <div id="ask" className="bg-[#1e1c1c]  w-170 mt-20 mx-auto rounded-3xl shadow-2xl mb-30">
-                <p className="text-gray-100/70 text-sm font-sans font-light pt-7 ml-8">DROP YOUR QQUESTION</p>
+                <p className="text-gray-100/70 text-sm font-sans font-light pt-7 ml-8">DROP YOUR QUESTION</p>
                 <div className="mt-4 mx-auto w-[90%] max-w-3xl bg-[#1e1c1c] rounded-2xl p-6 shadow-2xl">
                     <h2 className="text-white text-xl font-semibold">Still have a question</h2>
                     <p className="text-gray-100/50 text-sm mt-1 ">Ask anything and we’ll help you out.</p>
